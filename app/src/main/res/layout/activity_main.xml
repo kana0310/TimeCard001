@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextClock
+        android:id="@+id/genzaizikoku"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:format12Hour="hh:mm"
+        android:format24Hour="HH:mm"
+        android:text="@string/now"
+        android:textSize="60sp"
+        android:timeZone="GMT+900"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/syukkinbotton"
+        android:layout_width="397dp"
+        android:layout_height="83dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/button_styles1"
+        android:text="@string/syukkinbotan"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/genzaizikoku" />
+
+    <Button
+        android:id="@+id/taikinnbutton"
+        android:layout_width="397dp"
+        android:layout_height="82dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/button_styles2"
+        android:text="@string/tainkinnbuttonvaluses"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/syukkinbotton" />
+
+    <Button
+        android:id="@+id/toiawasebutton"
+        android:layout_width="92dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/button_styles4"
+        android:text="@string/toiawse"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/ninzuuhyoujibutton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/taikinnbutton" />
+
+    <Button
+        android:id="@+id/ninzuuhyoujibutton"
+        android:layout_width="94dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/button_styles3"
+        android:text="@string/ninzuuhyouji"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/hyouzibutton"
+        app:layout_constraintStart_toEndOf="@+id/toiawasebutton"
+        app:layout_constraintTop_toBottomOf="@+id/taikinnbutton" />
+
+    <Button
+        android:id="@+id/hyouzibutton"
+        android:layout_width="94dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/button_styles4"
+        android:text="@string/hyouzibutton1"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ninzuuhyoujibutton"
+        app:layout_constraintTop_toBottomOf="@+id/taikinnbutton" />
+</android.support.constraint.ConstraintLayout>

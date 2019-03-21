@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">TimeCard001</string>
+    <string name="syukkinbotan">出勤</string>
+    <string name="tainkinnbuttonvaluses">退勤</string>
+    <string name="toiawse">お問い合わせ</string>
+    <string name="ninzuuhyouji">人数表示</string>
+    <string name="otoiawsenaiyou">お問い合わせ内容</string>
+    <string name="sousinbutton">送信</string>
+    <string name="kyannseru">キャンセル</string>
+    <string name="modoru">戻る</string>
+    <string name="tv_name">名前</string>
+    <string name="id_number">ID</string>
+    <string name="malenumber">男</string>
+    <string name="female">女</string>
+    <string name="male_Bytes_Number">バイト男</string>
+    <string name="female_Bytes_Number">女バイト</string>
+    <string name="now">00:00</string>
+    <string name="hyouzibutton1">表示一覧</string>
+    <string name="title1">_id</string>
+    <string name="title2">year</string>
+    <string name="title3">month</string>
+    <string name="title4">day</string>
+    <string name="title5">start_hour</string>
+    <string name="title6">start_minute</string>
+    <string name="title7">end_hour</string>
+    <string name="title8">end_minute</string>
+</resources>
