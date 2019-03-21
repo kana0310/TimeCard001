@@ -53,7 +53,7 @@ public class SinnpuruhyouziActivtiy extends AppCompatActivity {
         }
         //timeCradList.add("2019年3月21日10時00分");
         //timeCradList.add("2019年3月22日10時00分");
-
+//コメント
         ArrayAdapter<String> adapter = new ArrayAdapter<>(SinnpuruhyouziActivtiy.this,
                 android.R.layout.simple_list_item_1,timeCradList);
         itirannList.setAdapter(adapter);
