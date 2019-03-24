@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 @RequiresApi(api = Build.VERSION_CODES.O)
 public class TaikinnButtonListener implements View.OnClickListener {
 
+
     @Override
     public void onClick(View view) {
         LocalDateTime now = LocalDateTime.now();
@@ -50,8 +51,11 @@ public class TaikinnButtonListener implements View.OnClickListener {
             stmt.bindLong(5, day);
 
             stmt.executeUpdateDelete();
-        }finally {
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
             db.close();
+
         }
     }
 }

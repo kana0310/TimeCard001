@@ -15,6 +15,7 @@ import java.time.LocalDateTime;
 public class SyukkinButtonListener implements View.OnClickListener {
 
 
+
     @Override
     public void onClick(View v) {
         LocalDateTime now = LocalDateTime.now();
@@ -53,6 +54,8 @@ public class SyukkinButtonListener implements View.OnClickListener {
             stmt.bindLong(5, minute);
 
             stmt.executeInsert();
+        } catch (Exception e) {
+            e.printStackTrace();
         } finally {
             db.close();
         }
