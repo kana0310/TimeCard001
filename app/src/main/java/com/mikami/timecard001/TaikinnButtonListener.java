@@ -4,8 +4,10 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteStatement;
 import android.os.Build;
+import android.os.Handler;
 import android.support.annotation.RequiresApi;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import java.time.LocalDateTime;
@@ -55,7 +57,7 @@ public class TaikinnButtonListener implements View.OnClickListener {
             e.printStackTrace();
         } finally {
             db.close();
-
         }
+
     }
 }
