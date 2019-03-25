@@ -3,7 +3,7 @@ package com.mikami.timecard001;
         import android.content.Intent;
         import android.view.View;
 
-public class ToiawaseButtonListener implements View.OnClickListener {
+public class OtoiawaseButtonListener implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {

@@ -17,8 +17,8 @@ public class MainActivity extends AppCompatActivity {
         Button taikinnbutton = findViewById(R.id.taikinnbutton);
         taikinnbutton.setOnClickListener(new TaikinnButtonListener());
 
-        Button toiwase = findViewById(R.id.toiawasebutton);
-        toiwase.setOnClickListener(new ToiawaseButtonListener());
+        Button otoiawasebutton = findViewById(R.id.otoiawsebutton);
+        otoiawasebutton.setOnClickListener(new OtoiawaseButtonListener());
 
         Button ninzuuhyouzi = findViewById(R.id.ninzuuhyoujibutton);
         ninzuuhyouzi.setOnClickListener(new NinzuuhyoujiButtonListener());
