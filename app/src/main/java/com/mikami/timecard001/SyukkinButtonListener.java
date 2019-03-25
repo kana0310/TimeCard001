@@ -16,8 +16,17 @@ import java.time.LocalDateTime;
 @RequiresApi(api = Build.VERSION_CODES.O)
 public class SyukkinButtonListener implements View.OnClickListener {
 
+    private Button SyukkinButton;
+
     @Override
     public void onClick(View v) {
+//        SyukkinButton.setEnabled(false);
+//        new Handler().postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                SyukkinButton.setEnabled(true);
+//            }
+//        },10000L);
         LocalDateTime now = LocalDateTime.now();
         // Toast.makeText(v.getContext(), "現在時刻:" + now, Toast.LENGTH_LONG).show();
         int year = now.getYear();
