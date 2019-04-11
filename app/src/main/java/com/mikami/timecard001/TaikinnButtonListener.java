@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @RequiresApi(api = Build.VERSION_CODES.O)
 public class TaikinnButtonListener implements View.OnClickListener {
 
-    private Button TaikinnButton;
+    private Button taikinnButton;
 
     @Override
     public void onClick(View view) {
