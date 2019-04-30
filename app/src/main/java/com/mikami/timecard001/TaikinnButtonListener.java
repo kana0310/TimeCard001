@@ -19,13 +19,6 @@ public class TaikinnButtonListener implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-//        TaikinnButton.setEnabled(false);
-//        new Handler().postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                TaikinnButton.setEnabled(true);
-//            }
-//        },10000L);
         LocalDateTime now = LocalDateTime.now();
         //Toast.makeText(view.getContext(),now.toString(),Toast.LENGTH_LONG).show();
 
