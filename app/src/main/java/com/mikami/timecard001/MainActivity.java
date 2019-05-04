@@ -2,6 +2,7 @@ package com.mikami.timecard001;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.ThemedSpinnerAdapter;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
@@ -31,17 +32,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        DBHelper helper = new DBHelper(MainActivity.this);
+        DatabeseHelper = new helper(MainActivity.this);
 
-
-        boolean isWorkFinished = helper.isWorkFinished();
+        boolean isWorkFinished = isWorkFinished();
         if (isWorkFinished) {
             Button syukkinnButton.setEnabled(false);
             Button tainkinnButton.setEnabled(false);
             return;
         }
 
-        boolean isAlreadyShukkinToday = helper.isAlreadyShukkinToday();
+        boolean isAlreadyShukkinToday = isAlreadyShukkinToday();
         if (isAlreadyShukkinToday) {
 
             Button syukkinButton.setEnabled(false);
