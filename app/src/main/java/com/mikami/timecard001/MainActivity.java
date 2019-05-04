@@ -14,11 +14,11 @@ public class MainActivity extends AppCompatActivity {
         Button syukkinButton = findViewById(R.id.syukkinbotton);
         syukkinButton.setOnClickListener(new SyukkinButtonListener());
 
-        Button taikinnbutton = findViewById(R.id.taikinnbutton);
-        taikinnbutton.setOnClickListener(new TaikinnButtonListener());
+        Button taikinnButton = findViewById(R.id.taikinnbutton);
+        taikinnButton.setOnClickListener(new TaikinnButtonListener());
 
-        Button otoiawasebutton = findViewById(R.id.otoiawsebutton);
-        otoiawasebutton.setOnClickListener(new OtoiawaseButtonListener());
+        Button otoiawaseButton = findViewById(R.id.otoiawsebutton);
+        otoiawaseButton.setOnClickListener(new OtoiawaseButtonListener());
 
         Button ninzuuhyouzi = findViewById(R.id.ninzuuhyoujibutton);
         ninzuuhyouzi.setOnClickListener(new NinzuuhyoujiButtonListener());
@@ -26,4 +26,31 @@ public class MainActivity extends AppCompatActivity {
         Button syousaihyouzi = findViewById(R.id.hyouzibutton);
         syousaihyouzi.setOnClickListener(new HyouziButtonListener());
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        DBHelper helper = new DBHelper(MainActivity.this);
+
+
+        boolean isWorkFinished = helper.isWorkFinished();
+        if (isWorkFinished) {
+            Button syukkinnButton.setEnabled(false);
+            Button tainkinnButton.setEnabled(false);
+            return;
+        }
+
+        boolean isAlreadyShukkinToday = helper.isAlreadyShukkinToday();
+        if (isAlreadyShukkinToday) {
+
+            Button syukkinButton.setEnabled(false);
+            Button taikinButton.setEnabled(true);
+        } else {
+
+            Button syukkinButton.setEnabled(true);
+            Button taikinButton.setEnabled(false);
+        }
+    }
+}
 }
