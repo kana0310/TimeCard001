@@ -1,11 +1,18 @@
 package com.mikami.timecard001;
 
+import android.app.AutomaticZenRule;
+import android.app.admin.DeviceAdminInfo;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.ThemedSpinnerAdapter;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
+
+    private Button syukkinnButton;
+    private Button taikinnButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,29 +35,28 @@ public class MainActivity extends AppCompatActivity {
         syousaihyouzi.setOnClickListener(new HyouziButtonListener());
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onResume() {
         super.onResume();
 
-        DatabeseHelper = new helper(MainActivity.this);
+        DatabaseHelper helper = new DatabaseHelper(MainActivity.this);
 
-        boolean isWorkFinished = isWorkFinished();
-        if (isWorkFinished) {
-            Button syukkinnButton.setEnabled(false);
-            Button tainkinnButton.setEnabled(false);
+        boolean isTaikinToday = helper.isTaikinToday();
+        if (isTaikinToday) {
+            this.syukkinnButton.setEnabled(false);
+            this.taikinnButton.setEnabled(false);
             return;
         }
 
-        boolean isAlreadyShukkinToday = isAlreadyShukkinToday();
-        if (isAlreadyShukkinToday) {
-
-            Button syukkinButton.setEnabled(false);
-            Button taikinButton.setEnabled(true);
+        boolean isShukkinToday = helper.isShukkinToday();
+        if (isShukkinToday) {
+            this.syukkinnButton.setEnabled(false);
+            this.taikinnButton.setEnabled(true);
         } else {
-
-            Button syukkinButton.setEnabled(true);
-            Button taikinButton.setEnabled(false);
+            this.taikinnButton.setEnabled(true);
+            this.syukkinnButton.setEnabled(false);
         }
     }
 }
-}
+
