@@ -11,18 +11,20 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button syukkinnButton;
+
+    private Button syukkinButton;
     private Button taikinnButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button syukkinButton = findViewById(R.id.syukkinbotton);
+        this.syukkinButton = findViewById(R.id.syukkinbotton);
         syukkinButton.setOnClickListener(new SyukkinButtonListener());
 
-        Button taikinnButton = findViewById(R.id.taikinnbutton);
+        this.taikinnButton = findViewById(R.id.taikinnbutton);
         taikinnButton.setOnClickListener(new TaikinnButtonListener());
 
         Button otoiawaseButton = findViewById(R.id.otoiawsebutton);
@@ -36,27 +38,29 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
-    @Override
-    protected void onResume() {
+    protected void onResume(){
         super.onResume();
 
         DatabaseHelper helper = new DatabaseHelper(MainActivity.this);
 
-        boolean isTaikinToday = helper.isTaikinToday();
-        if (isTaikinToday) {
-            this.syukkinnButton.setEnabled(false);
-            this.taikinnButton.setEnabled(false);
+        boolean isSyukkin = helper.isShukkinToday();
+        if(isSyukkin){
+            syukkinButton.setEnabled(false);
+            taikinnButton.setEnabled(true);
+        }else{
+            syukkinButton.setEnabled(true);
+            taikinnButton.setEnabled(false);
+        }
+
+        boolean isTaikinn = helper.isTaikinToday();
+        if(isTaikinn){
+            syukkinButton.setEnabled(false);
+            taikinnButton.setEnabled(false);
             return;
         }
 
-        boolean isShukkinToday = helper.isShukkinToday();
-        if (isShukkinToday) {
-            this.syukkinnButton.setEnabled(false);
-            this.taikinnButton.setEnabled(true);
-        } else {
-            this.taikinnButton.setEnabled(true);
-            this.syukkinnButton.setEnabled(false);
-        }
+
     }
+
 }
 

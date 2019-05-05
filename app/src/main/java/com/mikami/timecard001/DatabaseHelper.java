@@ -53,7 +53,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             String nowYear = String.valueOf(today.getYear());
             String nowMonth = String.valueOf(today.getMonthValue());
             String nowDay = String.valueOf(today.getDayOfMonth());
-            String sql = "SELECT COUNT(*) AS cnt FROM syukkinbo WHERE year = ? AND month = ? AND day = ?";
+            String sql = "SELECT COUNT(*) AS cnt FROM syukkinnbo WHERE year = ? AND month = ? AND day = ?";
             Cursor cursor = db.rawQuery(sql, new String[]{nowYear, nowMonth, nowDay});
             cursor.moveToNext();
             int index = cursor.getColumnIndex("cnt");
@@ -76,7 +76,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             String nowYear = String.valueOf(today.getYear());
             String nowMonth = String.valueOf(today.getMonthValue());
             String nowDay = String.valueOf(today.getDayOfMonth());
-            String sql = "SELECT COUNT(*) AS cnt FROM sykkinbo WHERE year = ? AND month = ? AND day = ? AND start_hour IS NOT NULL AND end_hour IS NOT NULL";
+            String sql = "SELECT COUNT(*) AS cnt FROM syukkinnbo WHERE year = ? AND month = ? AND day = ? AND start_hour IS NOT NULL AND end_hour IS NOT NULL";
             Cursor cursor = db.rawQuery(sql, new String[]{nowYear, nowMonth, nowDay});
             cursor.moveToNext();
             int index = cursor.getColumnIndex("cnt");
