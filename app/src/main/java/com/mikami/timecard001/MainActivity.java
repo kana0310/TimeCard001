@@ -7,6 +7,7 @@ import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.ThemedSpinnerAdapter;
+import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
@@ -14,6 +15,9 @@ public class MainActivity extends AppCompatActivity {
 
     private Button syukkinButton;
     private Button taikinnButton;
+    private Button otoiawaseButton;
+    private Button ninzuuhyouzi;
+    private Button syousaihyouzi;
 
 
     @Override
@@ -27,13 +31,13 @@ public class MainActivity extends AppCompatActivity {
         this.taikinnButton = findViewById(R.id.taikinnbutton);
         taikinnButton.setOnClickListener(new TaikinnButtonListener());
 
-        Button otoiawaseButton = findViewById(R.id.otoiawsebutton);
+        this.otoiawaseButton = findViewById(R.id.otoiawsebutton);
         otoiawaseButton.setOnClickListener(new OtoiawaseButtonListener());
 
-        Button ninzuuhyouzi = findViewById(R.id.ninzuuhyoujibutton);
+        this.ninzuuhyouzi = findViewById(R.id.ninzuuhyoujibutton);
         ninzuuhyouzi.setOnClickListener(new NinzuuhyoujiButtonListener());
 
-        Button syousaihyouzi = findViewById(R.id.hyouzibutton);
+        this.syousaihyouzi = findViewById(R.id.hyouzibutton);
         syousaihyouzi.setOnClickListener(new HyouziButtonListener());
     }
 
